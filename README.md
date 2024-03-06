@@ -1,2 +1,2 @@
-# birds500-front
-www.birds500.com
+# spark-bird
+www.sparkbirdkorea.com
