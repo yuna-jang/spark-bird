@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/spark-bird/static/js/main.9c0d6a33.js",
+    "index.html": "/spark-bird/index.html",
+    "main.9c0d6a33.js.map": "/spark-bird/static/js/main.9c0d6a33.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.9c0d6a33.js"
+  ]
+}
