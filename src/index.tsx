@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import router from "./screens/Router";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./theme";
+import { theme } from "./theme-colors/theme";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
