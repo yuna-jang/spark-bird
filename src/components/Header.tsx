@@ -1,5 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import getPathHeader from "../functions/getPathHeader";
+import { Helmet } from "react-helmet";
+import { useState } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -10,6 +13,9 @@ const Container = styled.div`
 const BgImage = styled.div`
   box-sizing: border-box;
   flex-shrink: 0;
+  background-color: ${(props) => props.theme.textColor};
+  width: 100%;
+  height: 400px;
 
   img {
     width: 100%;
@@ -105,6 +111,13 @@ const Title = styled.div`
     height: 25px;
   }
 `;
+interface Iheader {
+  hash: string;
+  pathname: string;
+  key: string;
+  search: string;
+  state: string;
+}
 
 // 다른 url로 링크를 연결해주는 컴포넌트
 function Header() {
@@ -128,14 +141,21 @@ function Header() {
   const onReservationClick = () => {
     navigate("/reservation");
   };
+  const location = useLocation();
+  const pathHeader = getPathHeader(location.pathname);
 
   return (
     <Container>
+      <Helmet>
+        <title>{pathHeader}</title>
+      </Helmet>
       <BgImage>
-        <img src="/store/Background.png" />
+        {pathHeader === "Spark Bird Tour" ? (
+          <img src="./store/Background.png" />
+        ) : null}
       </BgImage>
       <Logo>
-        <img src="/store/logo.png" />
+        <img src="./store/logo.png" />
         <h1>Spark Bird Tour</h1>
       </Logo>
       <Menu>
@@ -149,13 +169,12 @@ function Header() {
         </ReservationButton>
       </Menu>
       <Title>
-        <h1>Spark Bird Tour Korea</h1>
-
+        <h1>{pathHeader}</h1>
         <hr />
 
-        <img src="/store/insta_white.png" />
-        <img src="/store/yt_white.png" />
-        <img src="/store/whats_white.png" />
+        <img src="./store/insta_white.png" />
+        <img src="./store/yt_white.png" />
+        <img src="./store/whats_white.png" />
         <p> description</p>
       </Title>
       {/* <ul>

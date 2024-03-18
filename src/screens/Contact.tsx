@@ -1,4 +1,9 @@
 function Contact() {
-  return <>Contact</>;
+  return (
+    <>
+      Contact
+      <ul style={{ height: "1000px" }}></ul>
+    </>
+  );
 }
 export default Contact;

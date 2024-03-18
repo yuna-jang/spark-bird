@@ -14,49 +14,52 @@ import Reservation from "./Reservation";
 import Contact from "./Contact";
 
 // 이 방식은 createBrowserRouter 방식입니다.
-const router = createBrowserRouter([
-  {
-    // 전체 route들의 컴포넌트 같은 것
-    path: "/",
-    element: <Root />,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "travel",
-        element: <Travel />,
-      },
-      {
-        path: "gallery",
-        element: <Gallery />,
-      },
-      {
-        path: "contact",
-        element: <Contact />,
-      },
-      {
-        path: "reservation",
-        element: <Reservation />,
-      },
-      // {
-      //   path: "users/:userId",
-      //   element: ,
-      //   children: [
-      //     {
-      //       path: ,
-      //       element:
-      //     },
-      //   ],
-      // },
-    ],
-    // errorElement: ,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      // 전체 route들의 컴포넌트 같은 것
+      path: "",
+      element: <Root />,
+      children: [
+        {
+          path: "",
+          element: <Home />,
+        },
+        {
+          path: "about",
+          element: <About />,
+        },
+        {
+          path: "travel",
+          element: <Travel />,
+        },
+        {
+          path: "gallery",
+          element: <Gallery />,
+        },
+        {
+          path: "contact",
+          element: <Contact />,
+        },
+        {
+          path: "reservation",
+          element: <Reservation />,
+        },
+        // {
+        //   path: "users/:userId",
+        //   element: ,
+        //   children: [
+        //     {
+        //       path: ,
+        //       element:
+        //     },
+        //   ],
+        // },
+      ],
+      // errorElement: ,
+    },
+  ],
+  { basename: `${process.env.PUBLIC_URL}` }
+);
 
 export default router;
