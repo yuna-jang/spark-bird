@@ -1,5 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import getPathHeader from "../functions/getPathHeader";
+import { Helmet } from "react-helmet";
+import { useState } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -10,6 +13,9 @@ const Container = styled.div`
 const BgImage = styled.div`
   box-sizing: border-box;
   flex-shrink: 0;
+  background-color: ${(props) => props.theme.textColor};
+  width: 100%;
+  height: 400px;
 
   img {
     width: 100%;
@@ -27,10 +33,18 @@ const Logo = styled.div`
   font-size: 25px;
   display: flex;
   gap: 8px;
+  cursor: pointer;
   // font-size와 맞춰야 함
   img {
     width: 25px;
     height: 25px;
+  }
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: inherit;
   }
 `;
 const Menu = styled.div`
@@ -47,7 +61,6 @@ const MenuButton = styled.button`
   background-color: transparent;
   font-size: 18px;
   font-weight: 10;
-
   cursor: pointer;
   border: 0;
   &:hover {
@@ -68,7 +81,6 @@ const ReservationButton = styled.button`
   width: 150px;
   height: 30px;
   cursor: pointer;
-
   border: 0;
   border-radius: 5px;
   display: flex;
@@ -76,8 +88,8 @@ const ReservationButton = styled.button`
   align-items: center;
 
   &:hover {
-    background-color: ${(props) => props.theme.textColor};
-    color: ${(props) => props.theme.bgColor};
+    background-color: ${(props) => props.theme.lightColor};
+    color: ${(props) => props.theme.textColor};
     transition: 0.5s;
   }
 `;
@@ -100,11 +112,18 @@ const Title = styled.div`
     font-size: 20px;
   }
   img {
-    margin-right: 10px;
-    width: 25px;
-    height: 25px;
+    margin-right: 15px;
+    width: 30px;
+    height: 30px;
   }
 `;
+interface Iheader {
+  hash: string;
+  pathname: string;
+  key: string;
+  search: string;
+  state: string;
+}
 
 // 다른 url로 링크를 연결해주는 컴포넌트
 function Header() {
@@ -116,8 +135,11 @@ function Header() {
   const onAboutClick = () => {
     navigate("/about");
   };
-  const onTravelClick = () => {
-    navigate("/travel");
+  const onExploreClick = () => {
+    navigate("/explore");
+  };
+  const onTripClick = () => {
+    navigate("/trip");
   };
   const onGalleryClick = () => {
     navigate("/gallery");
@@ -128,20 +150,28 @@ function Header() {
   const onReservationClick = () => {
     navigate("/reservation");
   };
+  const location = useLocation();
+  const pathHeader = getPathHeader(location.pathname);
 
   return (
     <Container>
+      <Helmet>
+        <title>{pathHeader}</title>
+      </Helmet>
       <BgImage>
-        <img src="/store/Background.png" />
+        {pathHeader === "Spark Bird Tour" ? (
+          <img src="./store/Background.png" />
+        ) : null}
       </BgImage>
-      <Logo>
-        <img src="/store/logo.png" />
-        <h1>Spark Bird Tour</h1>
+      <Logo onClick={onHomeClick}>
+        <img src="./store/logo.png" />
+        <button>Spark Bird Tour</button>
       </Logo>
       <Menu>
-        <MenuButton onClick={onHomeClick}>Home</MenuButton>
+        {/* <MenuButton onClick={onHomeClick}>Home</MenuButton> */}
         <MenuButton onClick={onAboutClick}>About</MenuButton>
-        <MenuButton onClick={onTravelClick}>Travel</MenuButton>
+        <MenuButton onClick={onExploreClick}>Explore</MenuButton>
+        <MenuButton onClick={onTripClick}>Trip</MenuButton>
         <MenuButton onClick={onGalleryClick}>Gallery</MenuButton>
         <MenuButton onClick={onContactClick}>Contact</MenuButton>
         <ReservationButton onClick={onReservationClick}>
@@ -149,24 +179,16 @@ function Header() {
         </ReservationButton>
       </Menu>
       <Title>
-        <h1>Spark Bird Tour Korea</h1>
-
+        <h1>{pathHeader}</h1>
         <hr />
 
-        <img src="/store/insta_white.png" />
-        <img src="/store/yt_white.png" />
-        <img src="/store/whats_white.png" />
+        <a href="https://www.instagram.com/sparkbird.tour.korea?igsh=YmE3czM5OHgza2Q%3D&utm_source=qr">
+          <img src="./store/insta_white.png" />
+        </a>
+        <img src="./store/yt_white.png" />
+        <img src="./store/whats_white.png" />
         <p> description</p>
       </Title>
-      {/* <ul>
-        <li>
-          <Link to={"/"}>Home</Link>
-        </li>
-        <li>
-          <button onClick={onAboutClick}>About</button>
-           {/* <Link to={"/about"}>About</Link> 
-        </li>
-      </ul> */}
     </Container>
   );
 }

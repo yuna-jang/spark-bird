@@ -10,8 +10,10 @@
     "@types/node": "^16.18.86",
     "@types/react": "^18.2.63",
     "@types/react-dom": "^18.2.20",
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.8",
@@ -23,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -43,5 +47,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://yuna-jang.github.io/spark-bird"
+  "devDependencies": {
+    "@types/react-helmet": "^6.1.11"
+  },
+  "homepage": "https://sparkbirdkorea.com"
 }

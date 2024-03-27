@@ -5,4 +5,5 @@ export const theme: DefaultTheme = {
   textColor: "#114232",
   btnColor: "#FCDC2A",
   lightColor: "#F7F6BB",
+  blueColor: "#f0f8ff",
 };

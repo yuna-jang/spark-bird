@@ -6,6 +6,7 @@ declare module "styled-components" {
     textColor: string;
     btnColor: string;
     lightColor: string;
+    blueColor: string;
   }
   export interface MapTheme {
     level1: string;
