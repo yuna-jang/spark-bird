@@ -1,8 +1,8 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "../layouts/Header";
 import styled, { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import Footer from "../components/Footer";
+import Footer from "../layouts/Footer";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;1,200&display=swap');

@@ -1,4 +1,4 @@
-function Contact() {
+function Gallery() {
   return (
     <>
       - 한국 새들의 사진 - 필터링 : 해시태그를 이용
@@ -6,4 +6,4 @@ function Contact() {
     </>
   );
 }
-export default Contact;
+export default Gallery;

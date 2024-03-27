@@ -39,7 +39,7 @@ const SubmitButton = styled.button`
   margin: 30px;
 `;
 
-function Contact() {
+function Reservation() {
   return (
     <>
       <Title>Let's book a birding tour!</Title>
@@ -55,4 +55,4 @@ function Contact() {
     </>
   );
 }
-export default Contact;
+export default Reservation;

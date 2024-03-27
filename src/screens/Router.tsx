@@ -4,7 +4,7 @@ import {
   Routes,
   createBrowserRouter,
 } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "../layouts/Header";
 import Home from "./Home";
 import About from "./About";
 import Root from "./Root";
