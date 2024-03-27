@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Header from "../layouts/Header";
 import styled, { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Source Sans 3", sans-serif;
     font-weight: 100;
     font-optical-sizing: auto;
-    /* background-color: ${(props) => props.theme.lightColor}; */
     background-color: whitesmoke;
     color:${(props) => props.theme.textColor};
   }

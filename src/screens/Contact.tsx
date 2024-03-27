@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../theme";
+import { theme } from "../theme-colors/theme";
 import { AddressIcon } from "../icons/AddressIcon";
 import { EmailIcon } from "../icons/EmailIcon";
 import { PhoneIcon } from "../icons/PhoneIcon";
