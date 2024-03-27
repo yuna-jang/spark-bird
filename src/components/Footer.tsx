@@ -9,7 +9,6 @@ const Container = styled.div`
   color: ${(props) => props.theme.bgColor};
   bottom: 0;
   padding: 2% 20%;
-  gap: 5px;
 
   display: flex;
   flex-direction: column;

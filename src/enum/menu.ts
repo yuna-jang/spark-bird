@@ -1,7 +1,8 @@
 enum menu {
   home,
   about,
-  travel,
+  explore,
+  trip,
   gallery,
   contact,
   reservation,

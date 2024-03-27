@@ -8,10 +8,11 @@ import Header from "../components/Header";
 import Home from "./Home";
 import About from "./About";
 import Root from "./Root";
-import Travel from "./Travel";
-import Gallery from "./Gallery";
+import Explore from "./Explore";
+import Trip from "./Trip";
 import Reservation from "./Reservation";
 import Contact from "./Contact";
+import Gallery from "./Gallery";
 
 // 이 방식은 createBrowserRouter 방식입니다.
 const router = createBrowserRouter(
@@ -30,8 +31,12 @@ const router = createBrowserRouter(
           element: <About />,
         },
         {
-          path: "travel",
-          element: <Travel />,
+          path: "explore",
+          element: <Explore />,
+        },
+        {
+          path: "trip",
+          element: <Trip />,
         },
         {
           path: "gallery",

@@ -47,8 +47,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://sparkbirdkorea.com",
   "devDependencies": {
     "@types/react-helmet": "^6.1.11"
-  }
+  },
+  "homepage": "https://sparkbirdkorea.com"
 }
